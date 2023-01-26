@@ -12,20 +12,19 @@ default-run = "pcap2socks-gui"
 build = "src/build.rs"
 
 [build-dependencies]
-tauri-build = { version = "1.0.0-beta.3" }
+tauri-build = { version = "1.0.0-rc.8" }
 
 [dependencies]
 dns-lookup = "1.0.8"
 dnsping = "0.2.0"
-ipnetwork = "0.18.0"
+ipnetwork = "0.19.0"
 ninat = "0.1.0"
-pcap2socks = { git = "https://github.com/zhxie/pcap2socks" }
-rand = "0.8.4"
-serde_json = "1.0"
-serde = { version = "1.0", features = [ "derive" ] }
-shadowsocks-service = { version = "1.11.2", default-features = false, features = [ "local", "stream-cipher" ] }
-tauri = { version = "1.0.0-beta.5", features = [] }
-tokio = { version = "1.9.0", default-features = false, features = [ "time", "macros" ] }
+pcap2socks = { git = "https://github.com/askldfhjg/pcap2socks" }
+rand = "0.8.5"
+serde_json = "1.0.81"
+serde = { version = "1.0.137", features = [ "derive" ] }
+tauri = { version = "1.0.0-rc.8", features = [] }
+tokio = { version = "1.18.2", default-features = false, features = [ "time", "macros" ] }
 
 [features]
 default = [ "custom-protocol" ]
