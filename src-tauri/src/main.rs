@@ -38,23 +38,23 @@ fn test(payload: TestPayload, status: tauri::State<Arc<Status>>) -> Result<TestR
 
             (proxy, auth)
         }
-        1 => (ext::random_local_addr(), None),
+        //1 => (ext::random_local_addr(), None),
         _ => unreachable!(),
     };
 
     // Proxy
     status.is_running.store(true, Ordering::Relaxed);
-    match payload.protocol {
-        1 => {
-            ext::run_shadowsocks(
-                payload.destination.as_str(),
-                proxy,
-                Arc::clone(&status.is_running),
-            )?;
-            thread::sleep(Duration::new(1, 0));
-        }
-        _ => {}
-    }
+    // match payload.protocol {
+    //     1 => {
+    //         // ext::run_shadowsocks(
+    //         //     payload.destination.as_str(),
+    //         //     proxy,
+    //         //     Arc::clone(&status.is_running),
+    //         // )?;
+    //         // thread::sleep(Duration::new(1, 0));
+    //     }
+    //     _ => {}
+    // }
     let (ip, nat) = match ext::test_nat_type(proxy, auth.clone()) {
         Ok((ip, nat)) => (ip, nat),
         Err(_) => {
@@ -89,7 +89,7 @@ fn run(payload: RunPayload, status: tauri::State<Arc<Status>>) -> Result<RunResp
 
             (proxy, auth)
         }
-        1 => (ext::random_local_addr(), None),
+        //1 => (ext::random_local_addr(), None),
         _ => unreachable!(),
     };
 
@@ -141,17 +141,17 @@ fn run(payload: RunPayload, status: tauri::State<Arc<Status>>) -> Result<RunResp
     status.upload.count().store(0, Ordering::Relaxed);
     status.download.size().store(0, Ordering::Relaxed);
     status.download.count().store(0, Ordering::Relaxed);
-    match payload.protocol {
-        1 => {
-            ext::run_shadowsocks(
-                payload.destination.as_str(),
-                proxy,
-                Arc::clone(&status.is_running),
-            )?;
-            thread::sleep(Duration::new(1, 0));
-        }
-        _ => {}
-    }
+    // match payload.protocol {
+    //     1 => {
+    //         // ext::run_shadowsocks(
+    //         //     payload.destination.as_str(),
+    //         //     proxy,
+    //         //     Arc::clone(&status.is_running),
+    //         // )?;
+    //         // thread::sleep(Duration::new(1, 0));
+    //     }
+    //     _ => {}
+    // }
     let (ip, nat) = match ext::test_nat_type(proxy, auth.clone()) {
         Ok((ip, nat)) => (ip, nat.to_string()),
         Err(_) => (None, "X".to_string()),
