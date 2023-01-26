@@ -1,6 +1,17 @@
 name: Build
 
-on: [push, pull_request]
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+#  schedule:
+#    - cron: 0 8 * * 5
+  watch:
+    types: started
 
 env:
   CARGO_TERM_COLOR: always
