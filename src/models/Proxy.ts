@@ -1,6 +1,5 @@
 const protocols = [
   { label: "SOCKS5", value: 0 },
-  { label: "Shadowsocks", value: 1 },
 ];
 
 class Proxy {
