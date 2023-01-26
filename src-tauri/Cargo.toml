@@ -19,7 +19,7 @@ dns-lookup = "1.0.8"
 dnsping = "0.2.0"
 ipnetwork = "0.19.0"
 ninat = "0.1.0"
-pcap2socks = { git = "https://github.com/askldfhjg/pcap2socks" }
+pcap2socks = { git = "https://github.com/ponyplane/pcap2socks" }
 rand = "0.8.5"
 serde_json = "1.0.81"
 serde = { version = "1.0.137", features = [ "derive" ] }
