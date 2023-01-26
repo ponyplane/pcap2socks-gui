@@ -13,7 +13,7 @@
   "private": true,
   "homepage": "./",
   "dependencies": {
-    "@tauri-apps/api": "^1.0.0-beta.5",
+    "@tauri-apps/api": "^1.0.0-rc.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -55,7 +55,7 @@
     ]
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.0.0-beta.6",
+    "@tauri-apps/cli": "^1.0.0-rc.5",
     "babel-plugin-import": "^1.13.3",
     "cross-env": "^7.0.3",
     "customize-cra": "^1.0.0",
